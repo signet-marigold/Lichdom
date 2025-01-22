@@ -11,25 +11,20 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item PHYLACTERY = registerItem("phylactery");
+    public static final Item PHYLACTERY = register("phylactery");
 
-    public static Item register(Item item, RegistryKey<Item> registryKey) {
-        return Registry.register(Registries.ITEM, registryKey.getValue(), item);
-    }
-
-    public static Item registerItem(String name) {
+    private static Item register(String name) {
         RegistryKey<Item> ITEM_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Lichdom.MOD_ID, name));
-        return register(
-            new Item(new Item.Settings().registryKey(ITEM_KEY)),
-            ITEM_KEY
-        );
+        return Registry.register(Registries.ITEM, ITEM_KEY.getValue(), new Item(new Item.Settings().registryKey(ITEM_KEY)));
     }
 
     // Get the event for modifying entries in the ingredients group.
     // And register an event handler that adds our suspicious item to the ingredients group.
     public static void initialize() {
+        Lichdom.LOGGER.info("Registering Items for " + Lichdom.MOD_ID);
+
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((entries) -> {
-            entries.add(PHYLACTERY);
+            entries.add(ModItems.PHYLACTERY);
         });
     }
 }

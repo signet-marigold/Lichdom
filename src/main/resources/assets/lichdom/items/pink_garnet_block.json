@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type" : "minecraft:model",
+    "model": "lichdom:block/pink_garnet_block"
+  }
+}
