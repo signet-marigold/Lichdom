@@ -11,7 +11,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item PHYLACTERY = register("phylactery");
+    public static final Item CURSED_AMULET = register("cursed_amulet");
 
     private static Item register(String name) {
         RegistryKey<Item> ITEM_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Lichdom.MOD_ID, name));
@@ -24,7 +24,7 @@ public class ModItems {
         Lichdom.LOGGER.info("Registering Items for " + Lichdom.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((entries) -> {
-            entries.add(ModItems.PHYLACTERY);
+            entries.add(ModItems.CURSED_AMULET);
         });
     }
 }

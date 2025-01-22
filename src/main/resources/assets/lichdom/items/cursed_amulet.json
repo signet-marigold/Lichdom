@@ -1,6 +1,6 @@
 {
   "model": {
     "type" : "minecraft:model",
-    "model": "lichdom:item/phylactery"
+    "model": "lichdom:item/cursed_amulet"
   }
 }

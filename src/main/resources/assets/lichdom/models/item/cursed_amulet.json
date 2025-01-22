@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "lichdom:item/phylactery"
+    "layer0": "lichdom:item/cursed_amulet"
   }
 }
