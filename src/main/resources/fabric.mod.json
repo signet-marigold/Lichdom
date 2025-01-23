@@ -30,6 +30,7 @@
 		"lichdom.mixins.json"
 	],
 	"depends": {
+		"fabric-key-binding-api-v1": "*",
 		"fabricloader": ">=0.16.10",
 		"minecraft": "~1.21.4",
 		"java": ">=21",

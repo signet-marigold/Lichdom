@@ -1,5 +1,8 @@
 {
   "item.lichdom.cursed_amulet": "Cursed Amulet",
   "block.lichdom.pink_garnet_block": "Block of Pink Garnet",
-  "block.lichdom.phylactery": "Phylactery"
+  "block.lichdom.phylactery": "Phylactery",
+  "key.category.lichdom": "Lichdom Keybinds",
+  "key.lichdom.test_keybinding_1": "Keybind 1",
+  "key.lichdom.test_keybinding_sticky_1": "Sticky Keybind 1"
 }
