@@ -11,15 +11,13 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item CURSED_AMULET = register("cursed_amulet");
-
     private static Item register(String name) {
         RegistryKey<Item> ITEM_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Lichdom.MOD_ID, name));
         return Registry.register(Registries.ITEM, ITEM_KEY.getValue(), new Item(new Item.Settings().registryKey(ITEM_KEY)));
     }
 
-    // Get the event for modifying entries in the ingredients group.
-    // And register an event handler that adds our suspicious item to the ingredients group.
+    public static final Item CURSED_AMULET = register("cursed_amulet");
+
     public static void initialize() {
         Lichdom.LOGGER.info("Registering Items for " + Lichdom.MOD_ID);
 
