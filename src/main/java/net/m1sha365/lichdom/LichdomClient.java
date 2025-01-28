@@ -1,5 +1,8 @@
 package net.m1sha365.lichdom;
 
+import net.m1sha365.lichdom.block.entity.ModBlockEntities;
+import net.m1sha365.lichdom.block.entity.client.AnimatedBlockRenderer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import org.lwjgl.glfw.GLFW;
 
 import net.minecraft.client.option.KeyBinding;
@@ -37,5 +40,7 @@ public class LichdomClient implements ClientModInitializer {
                 //client.player.sendMessage(new LiteralText("Sticky Key was pressed!"), false);
             }
         });
+
+        BlockEntityRendererFactories.register(ModBlockEntities.ANIMATED_BLOCK_ENTITY, AnimatedBlockRenderer::new);
     }
 }
