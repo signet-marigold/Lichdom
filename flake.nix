@@ -1,33 +1,44 @@
-# Minecraft dev nixos flake library loader
-# https://gist.github.com/Lgmrszd/98fb7054e63a7199f9510ba20a39bc67
-# Simply run `nix develop` on a nix system running flakes and nix command support
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
   };
 
   outputs = { self, nixpkgs }:
-  
-  let 
-    pkgs = nixpkgs.legacyPackages.x86_64-linux;
+  let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
     libs = with pkgs; [
-        libpulseaudio
-        libGL
-        glfw
-        openal
-        stdenv.cc.cc.lib
-      ];
-  in {
-    devShell.x86_64-linux = pkgs.mkShell {
-      packages = [];
+      jdk21
+      libpulseaudio
+      libGL
+      glfw
+      openal
+      stdenv.cc.cc.lib
+    ];
+    commonInputs = {
       buildInputs = libs;
       LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath libs;
-      shellHook = ''
+    };
+  in with pkgs; {
+
+    devShells.${system} = {
+      # nix develop ./#dev
+      dev = mkShell (commonInputs // {
+        shellHook = ''
+          export JAVA_VERSION=$(java --version | awk 'NR==1 {print $2}')
+          export PS1="(java v$JAVA_VERSION) \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
+        '';
+      });
+      
+      # nix develop ./#test
+      test = mkShell (commonInputs // {
+        shellHook = ''
           echo "Starting runClient target"
           ./gradlew runClient
           echo "Exiting nix development shell"
           exit
         '';
+      });
     };
   };
 }
