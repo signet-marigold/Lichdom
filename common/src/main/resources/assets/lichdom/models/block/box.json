@@ -1,0 +1,7 @@
+{
+  "parent": "lichdom:block/default_box",
+  "textures": {
+    "1": "lichdom:block/botarium_side",
+    "particle": "lichdom:block/botarium_side"
+  }
+}
