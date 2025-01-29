@@ -17,6 +17,7 @@ public final class ItemRegistry {
 
 	public static final Supplier<BlockItem> GECKO_HABITAT = registerItem("gecko_habitat", properties -> new GeckoHabitatItem(BlockRegistry.GECKO_HABITAT.get(), properties));
 	public static final Supplier<BlockItem> FERTILIZER = registerItem("fertilizer", properties -> new BlockItem(BlockRegistry.FERTILIZER.get(), properties));
+	public static final Supplier<BlockItem> PHYLACTERY = registerItem("phylactery", properties -> new BlockItem(BlockRegistry.PHYLACTERY.get(), properties));
 
 	public static final Supplier<JackInTheBoxItem> JACK_IN_THE_BOX = registerItem("jack_in_the_box", JackInTheBoxItem::new);
 
@@ -47,6 +48,10 @@ public final class ItemRegistry {
 			.title(Component.translatable("itemGroup." + LichdomCommon.MODID + ".lichdom_items"))
 			.icon(() -> new ItemStack(ItemRegistry.JACK_IN_THE_BOX.get()))
 			.displayItems((enabledFeatures, entries) -> {
+
+				entries.accept(ItemRegistry.PHYLACTERY.get());
+
+				// Default Items:
 				entries.accept(ItemRegistry.JACK_IN_THE_BOX.get());
 				entries.accept(ItemRegistry.GECKO_ARMOR_HELMET.get());
 				entries.accept(ItemRegistry.GECKO_ARMOR_CHESTPLATE.get());
