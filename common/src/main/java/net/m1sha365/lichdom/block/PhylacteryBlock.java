@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.core.BlockPos;
 import org.jetbrains.annotations.Nullable;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.m1sha365.lichdom.block.entity.PhylacteryBlockEntity;
 
 /**
  * Item that holds a lich's essence.
