@@ -14,6 +14,7 @@
       glfw
       openal
       stdenv.cc.cc.lib
+      flite
     ];
     commonInputs = {
       buildInputs = libs;
