@@ -2,6 +2,7 @@ package net.m1sha365.lichdom.client;
 
 import net.m1sha365.lichdom.client.renderer.block.FertilizerBlockRenderer;
 import net.m1sha365.lichdom.client.renderer.block.GeckoHabitatBlockRenderer;
+import net.m1sha365.lichdom.client.renderer.block.PhylacteryBlockRenderer;
 import net.m1sha365.lichdom.client.renderer.entity.*;
 import net.m1sha365.lichdom.registry.BlockEntityRegistry;
 import net.m1sha365.lichdom.registry.EntityRegistry;
@@ -30,5 +31,6 @@ public final class LichdomClient {
 
         blockEntityRenderers.accept(BlockEntityRegistry.GECKO_HABITAT.get(), context -> new GeckoHabitatBlockRenderer());
         blockEntityRenderers.accept(BlockEntityRegistry.FERTILIZER_BLOCK.get(), context -> new FertilizerBlockRenderer());
+        blockEntityRenderers.accept(BlockEntityRegistry.PHYLACTERY.get(), context -> new PhylacteryBlockRenderer());
     }
 }
