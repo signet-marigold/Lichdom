@@ -5,8 +5,8 @@
 			"description": {
 				"identifier": "geometry.phylactery",
 				"texture_width": 16,
-				"texture_height": 16,
-			},
-		},
+				"texture_height": 16
+			}
+		}
 	]
 }

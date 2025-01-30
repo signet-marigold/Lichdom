@@ -1,6 +1,6 @@
 {
-  "parent": "lichdom:block/default_box",
-  "textures": {
-    "all": "Lichdom:block/phylactery"
-  }
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "lichdom:block/phylactery"
+    }
 }
