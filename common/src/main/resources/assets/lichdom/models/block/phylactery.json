@@ -1,6 +1,5 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "lichdom:block/phylactery"
-    }
+  "textures": {
+    "particle": "minecraft:block/glass"
+  }
 }

@@ -1,6 +1,9 @@
 package net.m1sha365.lichdom.block;
 
 import com.mojang.serialization.MapCodec;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
@@ -10,11 +13,10 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.m1sha365.lichdom.block.entity.PhylacteryBlockEntity;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.StateDefinition;
 
@@ -38,7 +40,9 @@ public class PhylacteryBlock extends BaseEntityBlock implements EntityBlock {
 	// What the buff is needs defined
 	// What the minons are needs defined
 	// What near means needs defined
-	
+
+	public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
+
 	public PhylacteryBlock(BlockBehaviour.Properties properties) {
 		super(properties);
 	}
@@ -48,11 +52,16 @@ public class PhylacteryBlock extends BaseEntityBlock implements EntityBlock {
 		return null;
 	}
 
-	public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
-
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(FACING);
+	}
+
+	@Nullable
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		return this.defaultBlockState().setValue(FACING,
+				context.getHorizontalDirection().getClockWise().getClockWise());
 	}
 
 	@Nullable

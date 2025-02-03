@@ -3,6 +3,7 @@ package net.m1sha365.lichdom.registry;
 import net.m1sha365.lichdom.LichdomCommon;
 import net.m1sha365.lichdom.item.GeckoArmorItem;
 import net.m1sha365.lichdom.item.GeckoHabitatItem;
+import net.m1sha365.lichdom.item.PhylacteryItem;
 import net.m1sha365.lichdom.item.JackInTheBoxItem;
 import net.m1sha365.lichdom.item.WolfArmorItem;
 import net.minecraft.network.chat.Component;
@@ -17,7 +18,7 @@ public final class ItemRegistry {
 
 	public static final Supplier<BlockItem> GECKO_HABITAT = registerItem("gecko_habitat", properties -> new GeckoHabitatItem(BlockRegistry.GECKO_HABITAT.get(), properties));
 	public static final Supplier<BlockItem> FERTILIZER = registerItem("fertilizer", properties -> new BlockItem(BlockRegistry.FERTILIZER.get(), properties));
-	public static final Supplier<BlockItem> PHYLACTERY = registerItem("phylactery", properties -> new BlockItem(BlockRegistry.PHYLACTERY.get(), properties));
+	public static final Supplier<BlockItem> PHYLACTERY = registerItem("phylactery", properties -> new PhylacteryItem(BlockRegistry.PHYLACTERY.get(), properties));
 
 	public static final Supplier<JackInTheBoxItem> JACK_IN_THE_BOX = registerItem("jack_in_the_box", JackInTheBoxItem::new);
 

@@ -1,0 +1,20 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"misc.idle": {
+			"loop": true,
+			"animation_length": 3,
+			"bones": {
+				"Cube": {
+					"rotation": {
+						"vector": [0, "(q.anim_time*120)+0.5", 0]
+					},
+					"position": {
+						"vector": [0, "math.sin(q.anim_time*120)*2", 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}
