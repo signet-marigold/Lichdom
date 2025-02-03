@@ -2,6 +2,8 @@
   "block.lichdom.fertilizer": "Fertilizer",
   "item.lichdom.fertilizer": "Fertilizer",
   "item.lichdom.fertilizer.tooltip": "Turn on rain to see the fertilizer model!",
+  "block.lichdom.phylactery": "Phylactery",
+  "item.lichdom.phylactery": "Phylactery",
   "block.lichdom.gecko_habitat": "Gecko Habitat",
   "item.lichdom.gecko_habitat": "Gecko Habitat",
   "entity.lichdom.bat": "Bat",
